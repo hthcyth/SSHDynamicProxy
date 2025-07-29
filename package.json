@@ -1,0 +1,19 @@
+{
+  "name": "packagesense",
+  "version": "1.0.0",
+  "description": "PackageSense - 安装包智能管理器",
+  "main": "src/main/index.js",
+  "scripts": {
+    "start": "npx electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.2.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "axios": "^1.6.7"
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PackageSense - 安装包智能管理器</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <h1>PackageSense</h1>
+      <div class="search-box">
+        <input type="text" placeholder="搜索安装包...">
+        <button id="search-btn">搜索</button>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="sidebar">
+        <div class="folder-nav">
+          <h3>文件夹导航</h3>
+          <button id="select-folder-btn">选择文件夹</button>
+          <ul id="folder-list"></ul>
+        </div>
+        <div class="filters">
+          <h3>筛选条件</h3>
+          <div class="filter-group">
+            <label>分类:</label>
+            <select id="category-filter"></select>
+          </div>
+          <div class="filter-group">
+            <label>标签:</label>
+            <select id="tag-filter"></select>
+          </div>
+          <div class="filter-group">
+            <label>大小范围:</label>
+            <input type="text" placeholder="最小(MB)"> - <input type="text" placeholder="最大(MB)">
+          </div>
+          <div class="filter-group">
+            <label>修改时间:</label>
+            <input type="date"> - <input type="date">
+          </div>
+          <button id="apply-filter-btn">应用筛选</button>
+        </div>
+      </div>
+      <div class="package-list">
+        <h3>安装包列表</h3>
+        <table id="packages-table">
+          <thead>
+            <tr>
+              <th>名称</th>
+              <th>大小</th>
+              <th>修改时间</th>
+              <th>分类</th>
+              <th>标签</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="packages-tbody"></tbody>
+        </table>
+      </div>
+      <div class="package-details">
+        <h3>安装包详情</h3>
+        <div id="package-info" class="hidden">
+          <div class="info-item">
+            <label>名称:</label>
+            <span id="detail-name"></span>
+          </div>
+          <div class="info-item">
+            <label>路径:</label>
+            <span id="detail-path"></span>
+          </div>
+          <div class="info-item">
+            <label>大小:</label>
+            <span id="detail-size"></span>
+          </div>
+          <div class="info-item">
+            <label>修改时间:</label>
+            <span id="detail-modified"></span>
+          </div>
+          <div class="info-item">
+            <label>描述:</label>
+            <textarea id="detail-description" placeholder="安装包描述..."></textarea>
+          </div>
+          <div class="info-item">
+            <label>分类:</label>
+            <select id="detail-category"></select>
+          </div>
+          <div class="info-item">
+            <label>标签:</label>
+            <div id="tags-container"></div>
+            <input type="text" id="new-tag-input" placeholder="添加标签...">
+            <button id="add-tag-btn">添加</button>
+          </div>
+          <div class="action-buttons">
+            <button id="save-details-btn">保存</button>
+            <button id="run-package-btn">运行</button>
+            <button id="open-folder-btn">打开文件夹</button>
+            <button id="analyze-ai-btn">AI分析</button>
+          </div>
+        </div>
+        <div id="no-selection" class="center-message">
+          请选择一个安装包以查看详情
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
